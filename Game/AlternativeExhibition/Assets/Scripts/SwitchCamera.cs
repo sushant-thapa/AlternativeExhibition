@@ -11,6 +11,18 @@ public class SwitchCamera : MonoBehaviour
     public Camera CameraF;
     public Camera CameraG;
     
+
+    void Awake()
+    {
+    	PlayerCam.enabled = true;
+    	CameraA.enabled = false;
+        CameraS.enabled=false;
+       	CameraD.enabled=false;
+       	CameraF.enabled=false;
+        CameraG.enabled=false;
+
+    }
+
     // Update is called once per frame
     void Update()
     {
