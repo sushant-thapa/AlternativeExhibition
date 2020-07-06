@@ -12,18 +12,31 @@ public class MouseManager : MonoBehaviour
     public Camera currentCamera; // camera where we use to move the player
 
     // The following are for cursors
+    public Texture2D pointer; // this is for the default
+    public Texture2D target; // this is for a target. We can use this for painting for now
+    public Texture2D sword; // 
 
- 
     private RaycastHit hit;
-   private void Update()
-   {
+    private void Update()
+    {
       if(Physics.Raycast(currentCamera.ScreenPointToRay(Input.mousePosition), out hit,50, clickableLayer.value))
       {
-     
+        
+        Cursor.SetCursor(target,new Vector2(16,16),CursorMode.Auto);
+
+        if(hit.collider.gameObject.tag == "Painting")
+        {
+          Cursor.SetCursor(sword,new Vector2(16,16),CursorMode.Auto);
+        }
+
         if (Input.GetMouseButtonDown(0)){
             onClickEnvironment.Invoke(hit.point); 
           }
-      }
+    }
+    else
+    {
+      Cursor.SetCursor(pointer,new Vector2(0,0),CursorMode.Auto);
+    }
           
    
 }
