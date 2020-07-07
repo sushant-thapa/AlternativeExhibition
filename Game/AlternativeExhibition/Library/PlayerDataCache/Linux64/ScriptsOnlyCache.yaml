@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Experiment
     - MouseManager
     NavMeshComponents.dll:
     - UnityEngine.AI.NavMeshSurface
@@ -10,12 +11,6 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
-    UnityEngine.UI.dll:
-    - UnityEngine.EventSystems.EventSystem
-    - UnityEngine.EventSystems.StandaloneInputModule
-    - UnityEngine.UI.CanvasScaler
-    - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.RawImage
   sceneClasses:
     Assets/Scenes/myScene.unity:
     - Class: 1
@@ -47,19 +42,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11156}
+      Script: {instanceID: 12092}
     - Class: 114
-      Script: {instanceID: 11752}
+      Script: {instanceID: 12586}
     - Class: 114
-      Script: {instanceID: 12162}
-    - Class: 114
-      Script: {instanceID: 12582}
-    - Class: 114
-      Script: {instanceID: 12620}
-    - Class: 114
-      Script: {instanceID: 12896}
-    - Class: 114
-      Script: {instanceID: 12972}
+      Script: {instanceID: 12900}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -69,12 +56,6 @@ ScriptsOnlyBuild:
     - Class: 195
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
       Script: {instanceID: 0}
     - Class: 238
       Script: {instanceID: 0}
@@ -331,6 +312,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: RemoteTestResultSender
+  - hash:
+      serializedVersion: 2
+      Hash: 5e3e0876083811848b54cb32f438a224
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Experiment
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
