@@ -23,13 +23,19 @@ public class MouseLook : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity *Time.deltaTime;
 
         xRotation -= mouseY;
+        
+        // giving a lock on the mouse 
         xRotation = Mathf.Clamp(xRotation,-90f,90f);
 
          // this is because it makes rotation intuitive
-        // giving a lock on the mouse
-// 
         
+
+
+       // here we are rotating by some amount 
         playerBody.Rotate(Vector3.up * mouseX); // Vector3.up is a shorthand for Vector3(0,1,0). so we are rotating by (0,mousex,0);
+
+       
+        // I think when we do Quaternion.Euler(x,y,z) we are not rotating by an amount but rotating to some angle
         transform.localRotation = Quaternion.Euler(xRotation,0f,0f); 
     }
 }

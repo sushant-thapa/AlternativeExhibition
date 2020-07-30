@@ -11,9 +11,12 @@ public class DynamicTextureFromWeb : MonoBehaviour
 	private UnityWebRequest[] UWR;
 	private string[] URLs;
 	private bool isDownloadDone;
+
 	void Start()
 	{
-		print("done ");
+
+		
+
 		URLs = new string[] {
 		
 						"https://explorug.com/v2/Cache/9349E1D53DF5412E4A3961F68EA1313E/Designs/Nemoxas.rendered.jpg",
