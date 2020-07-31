@@ -20,26 +20,24 @@ public class MouseManager : MonoBehaviour
     private void Update()
     {
       if(Physics.Raycast(currentCamera.ScreenPointToRay(Input.mousePosition), out hit,50, clickableLayer.value))
-      {
+        {
         
         Cursor.SetCursor(target,new Vector2(16,16),CursorMode.Auto);
 
-        if(hit.collider.gameObject.tag == "Painting")
-        {
-          Cursor.SetCursor(sword,new Vector2(16,16),CursorMode.Auto);
+      
+
+        // currently the following code is redundant as we have removed the NavMesh Agent
+
+        // if (Input.GetMouseButtonDown(0)){
+        //     onClickEnvironment.Invoke(hit.point); 
+        //   }
+
         }
 
-        if (Input.GetMouseButtonDown(0)){
-            onClickEnvironment.Invoke(hit.point); 
-          }
+        else{
+            Cursor.SetCursor(pointer,new Vector2(0,0),CursorMode.Auto);
+        }
     }
-    else
-    {
-      Cursor.SetCursor(pointer,new Vector2(0,0),CursorMode.Auto);
-    }
-          
-   
-}
 }
 
 

@@ -15,14 +15,20 @@ public class Carpet
 	private float xScale;  
 	private float zScale;
 	private string URL;
-
-	public Carpet(string url,float scaleInX, float scaleInZ) // these can be seen as the length and breadth
+	private string exploURL;
+	private string RuntimeID;
+	public Carpet(string url,float scaleInX, float scaleInZ,string exploRugUrl,string RuntimeID) // these can be seen as the length and breadth
 	{
 		xScale = scaleInX;
 		zScale = scaleInZ;
 		URL = url;
+		exploURL = exploRugUrl;
+		this.RuntimeID = RuntimeID;
 	}
 
+
+
+	// Getters
 	public string getURL()
 	{
 		return URL;
@@ -37,4 +43,14 @@ public class Carpet
 	{
 		return zScale;
 	}
+	public string getExploURL()
+	{
+		return exploURL;
+	}
+
+	public string getRuntimeID()
+	{
+		return RuntimeID;
+	}
+
 }

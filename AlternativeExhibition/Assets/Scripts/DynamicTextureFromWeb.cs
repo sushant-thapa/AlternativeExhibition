@@ -11,21 +11,14 @@ public class DynamicTextureFromWeb : MonoBehaviour
 	private UnityWebRequest[] UWR;
 	private string[] URLs;
 	private bool isDownloadDone;
-
 	void Start()
 	{
-
-		
-
-		URLs = new string[] {
-		
-						"https://explorug.com/v2/Cache/9349E1D53DF5412E4A3961F68EA1313E/Designs/Nemoxas.rendered.jpg",
-						"https://explorug.com/v2/Cache/9349E1D53DF5412E4A3961F68EA1313E/Designs/CLASSIC/Crorito.rendered.jpg",
-						"https://explorug.com/v2/Cache/9349E1D53DF5412E4A3961F68EA1313E/Designs/CLASSIC/Gurutent.rendered.jpg",
-						"https://explorug.com/v2/Cache/9349E1D53DF5412E4A3961F68EA1313E/Designs/CLASSIC/Reptyt%20Envipa.rendered.jpg",
-						"https://explorug.com/v2/Cache/9349E1D53DF5412E4A3961F68EA1313E/Designs/ELEMENTARY/Dinopa%20Dalog.rendered.jpg",
-						"https://explorug.com/v2/Cache/9349E1D53DF5412E4A3961F68EA1313E/Designs/ELEMENTARY/Venudrestre.rendered.jpg"
-					};
+		URLs = new string[] {"https://pkperfumes.com/wp-content/uploads/2016/05/Starry-Night-Van-Gogh-retouched-medium.jpg",
+						"https://s4.scoopwhoop.com/anj/paintings/778914987.jpg",
+						"https://media.overstockart.com/optimized/cache/data/product_images/VE2140-1000x1000.jpg",
+						"https://manjitkumar.files.wordpress.com/2011/05/feynman-3001.jpg",
+						"https://hexagongallery.com/wp-content/uploads/2017/01/GWB_SIGNED_RED-717x1000.jpg",
+						"http://3.bp.blogspot.com/-wgkAKkeNgXk/T9ky-RubhbI/AAAAAAAAC3E/-F6-6hfFQm0/s1600/The+Beatles+-+Abbey+Road.jpg"};
 
 		UWR = new UnityWebRequest[6];
 
@@ -33,10 +26,11 @@ public class DynamicTextureFromWeb : MonoBehaviour
 			UWR[i] = UnityWebRequestTexture.GetTexture(URLs[i]);
 		}
 
-
-		for (int i =0;i<URLs.Length;i++){
+for (int i =0;i<URLs.Length;i++){
 			UWR[i].SendWebRequest();
 		}
+		
+		
 	
 	}
 
@@ -53,17 +47,14 @@ public class DynamicTextureFromWeb : MonoBehaviour
 			print("downloaded");
 		}
 
-		if(Input.GetKeyDown("a"))
+		if(Input.GetKeyDown("space"))
 		{
-			print("A is pressed so the next line must be done");
-			
-
+			print("hello");
 
 			for (int i=0;i<6;i++){
 				
 				if (UWR[i].isDone)
 				{
-					print("i am inside the changer");
 					Painting[i].GetComponent<Renderer>().material.mainTexture = DownloadHandlerTexture.GetContent(UWR[i]);
 				}	
 			}
